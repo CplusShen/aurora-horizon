@@ -16,13 +16,13 @@ import horizon
 
 class Mygroup(horizon.PanelGroup):
     slug = "mygroup"
-    name = _("My Group")
-    panels = ('mypanel',)
+    name = _("Marketplace")
+    panels = ('mypanel','transcoder','images')
 
 class Mydashboard(horizon.Dashboard):
-    name = _("My Dashboard")
+    name = _("Aurora Video Cloud")
     slug = "mydashboard"
-    panels = (Mygroup,)  # Add your panels here.
+    panels = (Mygroup, )  # Add your panels here.
     default_panel = 'mypanel'  # Specify the slug of the dashboard's default panel.
 
 

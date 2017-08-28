@@ -15,9 +15,9 @@ from django.utils.translation import ugettext_lazy as _
 import horizon
 from openstack_dashboard.dashboards.mydashboard import dashboard
 
-class Mypanel(horizon.Panel):
-    name = _("Virtualized M30/M31")
-    slug = "mypanel"
+class Transcoder(horizon.Panel):
+    name = _("Transcoder")
+    slug = "transcoder"
 
 
-dashboard.Mydashboard.register(Mypanel)
+dashboard.Mydashboard.register(Transcoder)

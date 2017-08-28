@@ -10,14 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from django.utils.translation import ugettext_lazy as _
+from django.conf.urls import url
 
-import horizon
-from openstack_dashboard.dashboards.mydashboard import dashboard
-
-class Mypanel(horizon.Panel):
-    name = _("Virtualized M30/M31")
-    slug = "mypanel"
+from openstack_dashboard.dashboards.mydashboard.transcoder import views
 
 
-dashboard.Mydashboard.register(Mypanel)
+urlpatterns = [
+    url(r'^$', views.IndexView.as_view(), name='index'),
+]

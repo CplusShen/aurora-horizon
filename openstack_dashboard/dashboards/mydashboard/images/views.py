@@ -10,14 +10,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from django.utils.translation import ugettext_lazy as _
-
-import horizon
-from openstack_dashboard.dashboards.mydashboard import dashboard
-
-class Mypanel(horizon.Panel):
-    name = _("Virtualized M30/M31")
-    slug = "mypanel"
+from horizon import views
 
 
-dashboard.Mydashboard.register(Mypanel)
+class IndexView(views.APIView):
+    # A very simple class-based view...
+    template_name = 'mydashboard/images/index.html'
+
+    def get_data(self, request, context, *args, **kwargs):
+        # Add data to the context here...
+        return context
