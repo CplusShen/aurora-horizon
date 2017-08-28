@@ -10,7 +10,7 @@ from openstack_dashboard import exceptions
 from openstack_dashboard.settings import HORIZON_CONFIG
 
 DEBUG = True
-
+COMPRESS_ENABLED = False
 
 # WEBROOT is the location relative to Webserver root
 # should end with a slash.
