@@ -17,7 +17,9 @@ from openstack_dashboard.dashboards.mydashboard import dashboard
 
 class Images(horizon.Panel):
     name = _("Images")
-    slug = "images"
+    slug = 'images'
+    permissions = ('openstack.services.image',)
+    policy_rules = (('image', 'get_images'),)
 
 
 dashboard.Mydashboard.register(Images)

@@ -9,12 +9,18 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+import logging
 
+from django.conf import settings
+from django.conf.urls import include
 from django.conf.urls import url
 
+from openstack_dashboard.dashboards.mydashboard.images.images import urls as image_urls
+from openstack_dashboard.dashboards.mydashboard.images.snapshots import urls as snapshot_urls
 from openstack_dashboard.dashboards.mydashboard.images import views
-
 
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'', include(image_urls, namespace='images')),
+    url(r'', include(snapshot_urls, namespace='snapshots')),
 ]
